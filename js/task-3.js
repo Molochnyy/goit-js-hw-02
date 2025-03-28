@@ -1,8 +1,5 @@
 function checkForSpam(message) {
-    if (message.toLowerCase().includes("spam")) {
-        return true;
-    }
-    else if (message.toLowerCase().includes("sale")) {
+    if (message.toLowerCase().includes("spam") || message.toLowerCase().includes("sale")) {
         return true;
     }
     return false;
@@ -15,7 +12,3 @@ console.log(checkForSpam("Amazing SalE, only tonight!")); // true
 console.log(checkForSpam("Trust me, this is not a spam message")); // true
 console.log(checkForSpam("Get rid of sPaM emails. Our book in on sale!")); // true
 console.log(checkForSpam("[SPAM] How to earn fast money?")); // true
-
-
-// Почему, когда я искользовал логическое "или", без else if, метод includes проверял только то слово, которое стояло в начале проверки?
-// message.toLowerCase().includes("spam" || "sale") Вот в таком формате результат был не таким, как я ожидал. Почему?
